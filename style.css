@@ -396,25 +396,65 @@ nav a:hover {
 
 
 /* =========================
-   MINIATURAS
+   MINIATURAS DOS SERVIÇOS
 ========================= */
 
 .service-thumb {
-    width: 100px;
-    height: 78px;
+    width: 180px;
+    height: 125px;
 
     object-fit: cover;
+    object-position: center;
 
-    border-radius: 2px;
+    border-radius: 3px;
 
-    opacity: .82;
-
-    filter: saturate(.8);
+    opacity: .88;
+    filter: saturate(.85);
 
     transition:
         transform .35s ease,
         opacity .35s ease,
         filter .35s ease;
+}
+
+.service-item:hover .service-thumb {
+    opacity: 1;
+    filter: saturate(1);
+    transform: scale(1.04);
+}
+
+
+/* TABLET */
+
+@media (max-width: 900px) {
+
+    .service-item {
+        grid-template-columns: 1fr 150px;
+        gap: 25px;
+    }
+
+    .service-thumb {
+        width: 150px;
+        height: 105px;
+    }
+}
+
+
+/* CELULAR */
+
+@media (max-width: 600px) {
+
+    .service-item,
+    .service-item:nth-child(odd),
+    .service-item:nth-child(even) {
+        grid-template-columns: 1fr 110px;
+        gap: 18px;
+    }
+
+    .service-thumb {
+        width: 110px;
+        height: 85px;
+    }
 }
 
 
