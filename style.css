@@ -273,11 +273,57 @@ nav a:hover {
 ========================= */
 
 /* =========================
-   SERVIÇOS
-========================= */
-/* =========================
    ITENS DOS SERVIÇOS
 ========================= */
+
+/* =========================
+   SERVIÇOS
+========================= */
+
+.services {
+    background: #181818;
+    padding: 130px 6%;
+}
+
+.services-intro {
+    max-width: 1400px;
+    margin: 0 auto 75px;
+}
+
+.services-intro .eyebrow {
+    display: block;
+}
+
+.services-intro h2 {
+    max-width: 850px;
+    font-size: clamp(48px, 6vw, 82px);
+    line-height: .92;
+    letter-spacing: -4px;
+    margin-bottom: 28px;
+}
+
+.services-intro p {
+    max-width: 520px;
+    color: #999;
+    font-size: 17px;
+    line-height: 1.6;
+}
+
+
+/* LISTA */
+
+.services-list {
+    max-width: 1400px;
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    border-top: 1px solid #333;
+}
+
+
+/* CADA SERVIÇO */
 
 .service-item {
     min-height: 240px;
@@ -286,15 +332,17 @@ nav a:hover {
 
     border-bottom: 1px solid #333;
 
-    display: grid;
-    grid-template-columns: minmax(0, 1fr) 180px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 
     gap: 35px;
 
-    align-items: center;
-
-    transition: .3s ease;
+    transition: background .3s ease;
 }
+
+
+/* DIVISÃO CENTRAL */
 
 .service-item:nth-child(odd) {
     border-right: 1px solid #333;
@@ -305,12 +353,174 @@ nav a:hover {
     padding-left: 60px;
 }
 
+
+/* CONTEÚDO */
+
+.service-content {
+    flex: 1;
+    min-width: 0;
+}
+
+
+/* NÚMERO */
+
+.service-number {
+    display: block;
+
+    color: #f47b20;
+
+    font-size: 13px;
+    font-weight: bold;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 28px;
+}
+
+
+/* TÍTULO */
+
+.service-item h3 {
+    font-size: 27px;
+    font-weight: 500;
+
+    line-height: 1.1;
+
+    margin-bottom: 13px;
+}
+
+
+/* DESCRIÇÃO */
+
+.service-item p {
+    max-width: 430px;
+
+    color: #888;
+
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+
+/* =========================
+   MINIATURA
+========================= */
+
+.service-thumb {
+    flex-shrink: 0;
+
+    width: 150px;
+    height: 105px;
+
+    display: block;
+
+    object-fit: contain;
+
+    background: #111;
+
+    border-radius: 3px;
+
+    opacity: .9;
+
+    transition: transform .3s ease, opacity .3s ease;
+}
+
 .service-item:hover {
     background: #1e1e1e;
 }
 
+.service-item:hover .service-thumb {
+    opacity: 1;
+    transform: scale(1.03);
+}
 
-/* CONTEÚDO */
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 900px) {
+
+    .services {
+        padding: 100px 6%;
+    }
+
+    .service-item:nth-child(odd) {
+        padding-right: 30px;
+    }
+
+    .service-item:nth-child(even) {
+        padding-left: 30px;
+    }
+
+    .service-item {
+        gap: 20px;
+    }
+
+    .service-thumb {
+        width: 120px;
+        height: 90px;
+    }
+}
+
+
+/* =========================
+   CELULAR
+========================= */
+
+@media (max-width: 600px) {
+
+    .services {
+        padding: 80px 6%;
+    }
+
+    .services-intro {
+        margin-bottom: 50px;
+    }
+
+    .services-intro h2 {
+        font-size: 45px;
+        letter-spacing: -2px;
+    }
+
+    .services-intro p {
+        font-size: 15px;
+    }
+
+    .services-list {
+        grid-template-columns: 1fr;
+    }
+
+    .service-item,
+    .service-item:nth-child(odd),
+    .service-item:nth-child(even) {
+
+        min-height: auto;
+
+        padding: 28px 0;
+
+        border-right: none;
+
+        gap: 15px;
+    }
+
+    .service-number {
+        margin-bottom: 18px;
+    }
+
+    .service-item h3 {
+        font-size: 24px;
+    }
+
+    .service-item p {
+        font-size: 14px;
+    }
+
+    .service-thumb {
+        width: 95px;
+        height: 75px;
+    }
+}
 
 .service-content {
     min-width: 0;
