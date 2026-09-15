@@ -280,242 +280,261 @@ nav a:hover {
    SERVIÇOS
 ========================= */
 
-.services {
-    background: #f3f1ed;
-    color: #181818;
-    padding: 140px 6%;
+/* =========================================
+   SERVIÇOS — EDcar DARK
+========================================= */
+
+.services-dark {
+    background: #101214;
+    color: #fff;
+    padding: 120px 6vw 130px;
+    position: relative;
+    overflow: hidden;
 }
 
-.services-header {
+.services-dark-header {
     max-width: 1400px;
-    margin: 0 auto 80px;
+    margin: 0 auto 70px;
     display: grid;
-    grid-template-columns: 1.2fr .8fr;
+    grid-template-columns: 1.15fr 0.85fr;
     gap: 80px;
     align-items: end;
 }
 
-.services-header .eyebrow {
-    display: block;
-    color: #f47b20;
+.services-kicker {
+    display: inline-block;
+    color: #f58220;
     font-size: 12px;
-    font-weight: 700;
+    font-weight: 800;
     letter-spacing: 2px;
-    margin-bottom: 24px;
+    margin-bottom: 20px;
 }
 
-.services-header h2 {
+.services-dark h2 {
+    font-size: clamp(48px, 6vw, 86px);
+    line-height: 0.95;
+    letter-spacing: -3px;
     margin: 0;
-    font-size: clamp(52px, 7vw, 92px);
-    line-height: .9;
-    letter-spacing: -5px;
-    font-weight: 500;
+    font-weight: 800;
 }
 
-.services-header h2 span {
-    color: #8b8b8b;
+.services-dark-intro {
+    border-left: 1px solid rgba(255,255,255,.2);
+    padding-left: 35px;
 }
 
-.services-header > p {
-    max-width: 430px;
-    margin: 0 0 5px auto;
-    color: #666;
+.services-dark-intro p {
+    color: #b9bdc1;
     font-size: 17px;
     line-height: 1.7;
+    margin: 0 0 20px;
 }
+
+.services-dark-intro p:last-child {
+    margin-bottom: 0;
+}
+
+
+/* GRID */
 
 .services-grid {
     max-width: 1400px;
     margin: 0 auto;
-    border-top: 1px solid #d2d0cc;
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
 }
+
+
+/* CARD */
 
 .service-card {
-    min-height: 245px;
-    padding: 35px 40px 35px 0;
-    border-bottom: 1px solid #d2d0cc;
-    display: grid;
-    grid-template-columns: 45px 1fr 35px;
-    gap: 25px;
-    align-items: center;
-    transition: background .3s ease, padding .3s ease;
+    position: relative;
+    min-height: 500px;
+    overflow: hidden;
+    background: #1a1d20;
+    isolation: isolate;
 }
 
-.service-card:nth-child(odd) {
-    border-right: 1px solid #d2d0cc;
-    padding-right: 55px;
+.service-card-large {
+    min-height: 620px;
 }
 
-.service-card:nth-child(even) {
-    padding-left: 55px;
+.service-card img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -2;
+    transition: transform .7s ease;
 }
 
-.service-card:hover {
-    background: #e9e7e2;
+.service-card::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+        linear-gradient(
+            to top,
+            rgba(0,0,0,.95) 0%,
+            rgba(0,0,0,.65) 38%,
+            rgba(0,0,0,.08) 78%
+        );
+    z-index: -1;
 }
 
-.service-number {
-    align-self: start;
-    padding-top: 5px;
-    color: #f47b20;
-    font-size: 12px;
-    font-weight: 700;
-    letter-spacing: 1px;
+.service-card:hover img {
+    transform: scale(1.06);
 }
 
-.service-info h3 {
+
+/* TEXTO */
+
+.service-card-content {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 38px;
+}
+
+.service-card-content span {
+    display: block;
+    color: #f58220;
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    margin-bottom: 14px;
+}
+
+.service-card-content h3 {
+    font-size: 30px;
+    line-height: 1.05;
     margin: 0 0 14px;
-    font-size: 27px;
-    line-height: 1.1;
-    font-weight: 500;
-    letter-spacing: -.5px;
+    color: #fff;
+    letter-spacing: -.7px;
 }
 
-.service-info p {
-    max-width: 390px;
+.service-card-content p {
+    max-width: 620px;
     margin: 0;
-    color: #777;
+    color: #d5d7d9;
     font-size: 15px;
     line-height: 1.65;
 }
 
-.service-arrow {
-    width: 34px;
-    height: 34px;
-    border: 1px solid #c7c5c1;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #555;
-    font-size: 17px;
-    transition: .3s ease;
+
+/* PRIMEIRO BLOCO */
+
+.service-card-large .service-card-content {
+    padding: 45px;
 }
 
-.service-card:hover .service-arrow {
-    background: #f47b20;
-    border-color: #f47b20;
-    color: #fff;
-    transform: rotate(45deg);
+.service-card-large .service-card-content h3 {
+    font-size: 38px;
 }
 
-.services-footer {
-    max-width: 1400px;
-    margin: 65px auto 0;
-    padding-top: 30px;
-    border-top: 1px solid #d2d0cc;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 30px;
+
+/* ÚLTIMO */
+
+.service-card-last {
+    background: #151719;
 }
 
-.services-footer p {
-    margin: 0;
-    color: #777;
-    font-size: 14px;
+
+/* HOVER */
+
+.service-card-content h3 {
+    transition: color .3s ease;
 }
 
-.services-footer a {
-    color: #181818;
-    font-size: 15px;
-    font-weight: 600;
-    text-decoration: none;
+.service-card:hover .service-card-content h3 {
+    color: #f58220;
 }
 
-.services-footer a span {
-    color: #f47b20;
-    margin-left: 8px;
-    transition: margin .25s ease;
-}
 
-.services-footer a:hover span {
-    margin-left: 15px;
-}
+/* RESPONSIVO */
 
 @media (max-width: 900px) {
 
-    .services {
-        padding: 100px 6%;
+    .services-dark {
+        padding: 85px 24px 90px;
     }
 
-    .services-header {
+    .services-dark-header {
         grid-template-columns: 1fr;
         gap: 35px;
-        margin-bottom: 60px;
+        margin-bottom: 45px;
     }
 
-    .services-header > p {
-        margin: 0;
+    .services-dark h2 {
+        font-size: 52px;
+        letter-spacing: -2px;
     }
 
-    .service-card:nth-child(odd) {
-        padding-right: 30px;
-    }
-
-    .service-card:nth-child(even) {
-        padding-left: 30px;
-    }
-
-}
-
-@media (max-width: 600px) {
-
-    .services {
-        padding: 80px 6%;
-    }
-
-    .services-header {
-        margin-bottom: 50px;
-    }
-
-    .services-header h2 {
-        font-size: 48px;
-        letter-spacing: -3px;
-    }
-
-    .services-header > p {
-        font-size: 15px;
+    .services-dark-intro {
+        border-left: 0;
+        border-top: 1px solid rgba(255,255,255,.2);
+        padding: 25px 0 0;
     }
 
     .services-grid {
         grid-template-columns: 1fr;
-    }
-
-    .service-card,
-    .service-card:nth-child(odd),
-    .service-card:nth-child(even) {
-        min-height: 190px;
-        padding: 28px 0;
-        border-right: none;
-        grid-template-columns: 35px 1fr 30px;
-        gap: 15px;
-    }
-
-    .service-info h3 {
-        font-size: 23px;
-    }
-
-    .service-info p {
-        font-size: 14px;
-    }
-
-    .service-arrow {
-        width: 30px;
-        height: 30px;
-        font-size: 15px;
-    }
-
-    .services-footer {
-        margin-top: 45px;
-        align-items: flex-start;
-        flex-direction: column;
         gap: 18px;
     }
 
+    .service-card,
+    .service-card-large {
+        min-height: 520px;
+    }
 
+    .service-card-large .service-card-content h3 {
+        font-size: 32px;
+    }
+
+    .service-card-content {
+        padding: 30px;
+    }
+}
+
+
+@media (max-width: 520px) {
+
+    .services-dark {
+        padding: 70px 16px 75px;
+    }
+
+    .services-dark h2 {
+        font-size: 42px;
+    }
+
+    .services-dark-intro p {
+        font-size: 15px;
+    }
+
+    .service-card,
+    .service-card-large {
+        min-height: 460px;
+    }
+
+    .service-card-content {
+        padding: 25px;
+    }
+
+    .service-card-content h3 {
+        font-size: 27px;
+    }
+
+    .service-card-large .service-card-content h3 {
+        font-size: 30px;
+    }
+
+    .service-card-content p {
+        font-size: 14px;
+        line-height: 1.55;
+    }
+}
 /* =========================
    TABLET
 ========================= */
