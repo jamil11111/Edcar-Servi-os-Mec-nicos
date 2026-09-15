@@ -25,6 +25,10 @@ a {
     text-decoration: none;
 }
 
+/* =========================
+   HEADER
+========================= */
+
 .header {
     position: fixed;
     top: 0;
@@ -32,11 +36,7 @@ a {
     width: 100%;
     z-index: 1000;
     padding: 22px 5%;
-    background: linear-gradient(
-        to bottom,
-        rgba(0,0,0,.8),
-        transparent
-    );
+    background: linear-gradient(to bottom, rgba(0,0,0,.85), transparent);
 }
 
 .header-inner {
@@ -94,6 +94,10 @@ nav a:hover {
     border-color: #f47b20;
 }
 
+/* =========================
+   HERO
+========================= */
+
 .hero {
     min-height: 100vh;
     position: relative;
@@ -112,13 +116,12 @@ nav a:hover {
 .hero-overlay {
     position: absolute;
     inset: 0;
-    background:
-        linear-gradient(
-            90deg,
-            rgba(0,0,0,.85) 0%,
-            rgba(0,0,0,.55) 45%,
-            rgba(0,0,0,.15) 100%
-        );
+    background: linear-gradient(
+        90deg,
+        rgba(0,0,0,.85) 0%,
+        rgba(0,0,0,.55) 45%,
+        rgba(0,0,0,.15) 100%
+    );
 }
 
 .hero-content {
@@ -185,6 +188,10 @@ nav a:hover {
     color: #111;
 }
 
+/* =========================
+   NUMBERS
+========================= */
+
 .numbers {
     background: #f47b20;
     color: #111;
@@ -212,6 +219,10 @@ nav a:hover {
 .numbers span {
     font-size: 12px;
 }
+
+/* =========================
+   INTRO
+========================= */
 
 .intro {
     max-width: 1400px;
@@ -257,66 +268,94 @@ nav a:hover {
     font-weight: bold;
 }
 
+/* =========================
+   SERVIÇOS
+========================= */
+
 .services {
     background: #181818;
     padding: 130px 6%;
 }
 
-.section-heading {
+.services-intro {
     max-width: 1400px;
-    margin: auto;
-    margin-bottom: 80px;
+    margin: 0 auto 75px;
 }
 
-.section-heading h2 {
-    font-size: clamp(45px, 6vw, 80px);
-    line-height: .95;
+.services-intro .eyebrow {
+    display: block;
+}
+
+.services-intro h2 {
+    max-width: 850px;
+    font-size: clamp(48px, 6vw, 82px);
+    line-height: .92;
     letter-spacing: -4px;
-    margin-bottom: 25px;
+    margin-bottom: 28px;
 }
 
-.section-heading > p:last-child {
+.services-intro p {
+    max-width: 520px;
     color: #999;
-    max-width: 500px;
+    font-size: 17px;
 }
+
+/* grade de serviços */
 
 .services-list {
     max-width: 1400px;
     margin: auto;
-}
-
-.service-row {
     display: grid;
-    grid-template-columns: 70px 1fr 1fr;
-    gap: 30px;
-    align-items: center;
-    padding: 27px 0;
+    grid-template-columns: 1fr 1fr;
     border-top: 1px solid #333;
-    transition: .3s;
 }
 
-.service-row:last-child {
+.service-item {
+    min-height: 240px;
+    padding: 35px 45px 40px 0;
     border-bottom: 1px solid #333;
+    transition: .3s ease;
 }
 
-.service-row:hover {
-    padding-left: 15px;
+.service-item:nth-child(odd) {
+    border-right: 1px solid #333;
+    padding-right: 60px;
 }
 
-.service-row span {
+.service-item:nth-child(even) {
+    padding-left: 60px;
+}
+
+.service-item:hover {
+    background: #1e1e1e;
+}
+
+.service-number {
+    display: block;
     color: #f47b20;
     font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin-bottom: 35px;
 }
 
-.service-row h3 {
-    font-size: 24px;
+.service-item h3 {
+    font-size: 27px;
     font-weight: 500;
+    line-height: 1.1;
+    margin-bottom: 13px;
 }
 
-.service-row p {
+.service-item p {
+    max-width: 430px;
     color: #888;
-    font-size: 14px;
+    font-size: 15px;
+    line-height: 1.6;
 }
+
+/* =========================
+   PHOTO BREAK
+========================= */
 
 .photo-break {
     height: 80vh;
@@ -356,6 +395,10 @@ nav a:hover {
     letter-spacing: -4px;
 }
 
+/* =========================
+   GALERIA
+========================= */
+
 .gallery {
     padding: 130px 6%;
     max-width: 1500px;
@@ -381,6 +424,7 @@ nav a:hover {
 .gallery-grid > div {
     height: 360px;
     overflow: hidden;
+    background: #181818;
 }
 
 .gallery-grid .gallery-large {
@@ -397,13 +441,17 @@ nav a:hover {
     height: 100%;
     object-fit: contain;
     object-position: center;
-    background: #111;
+    background: #181818;
     transition: transform .7s;
 }
 
 .gallery-grid div:hover img {
-    transform: scale(1.04);
+    transform: scale(1.03);
 }
+
+/* =========================
+   AVALIAÇÕES
+========================= */
 
 .reviews {
     background: #f2f2f2;
@@ -457,6 +505,10 @@ nav a:hover {
     padding-top: 0;
 }
 
+/* =========================
+   CTA
+========================= */
+
 .cta {
     height: 650px;
     position: relative;
@@ -497,6 +549,10 @@ nav a:hover {
     margin-bottom: 30px;
 }
 
+/* =========================
+   CONTATO
+========================= */
+
 .contact {
     max-width: 1400px;
     margin: auto;
@@ -519,6 +575,10 @@ nav a:hover {
 .contact p:not(.eyebrow) {
     color: #999;
 }
+
+/* =========================
+   FOOTER
+========================= */
 
 footer {
     border-top: 1px solid #292929;
@@ -548,23 +608,48 @@ footer p {
     font-size: 12px;
 }
 
+/* =========================
+   WHATSAPP FLUTUANTE
+========================= */
+
 .floating-whatsapp {
     position: fixed;
-    right: 25px;
-    bottom: 25px;
-    z-index: 999;
+    right: 24px;
+    bottom: 24px;
+    z-index: 9999;
+
+    width: 62px;
+    height: 62px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
     background: #25d366;
-    color: white;
-    padding: 14px 20px;
-    font-weight: bold;
+    color: #fff;
+
+    font-size: 0;
     box-shadow: 0 8px 30px rgba(0,0,0,.35);
-    transition: .3s;
+
+    transition: transform .25s ease, box-shadow .25s ease;
+}
+
+.floating-whatsapp::before {
+    content: "◔";
+    font-size: 34px;
+    font-weight: bold;
+    transform: rotate(-35deg);
 }
 
 .floating-whatsapp:hover {
-    transform: translateY(-4px);
+    transform: scale(1.08);
+    box-shadow: 0 12px 35px rgba(0,0,0,.45);
 }
 
+/* =========================
+   TABLET
+========================= */
 
 @media (max-width: 900px) {
 
@@ -614,13 +699,12 @@ footer p {
         padding-bottom: 90px;
     }
 
-    .service-row {
-        grid-template-columns: 45px 1fr;
-        gap: 15px;
+    .services-list {
+        grid-template-columns: 1fr 1fr;
     }
 
-    .service-row p {
-        grid-column: 2;
+    .service-item {
+        min-height: 220px;
     }
 
     .photo-break {
@@ -666,6 +750,9 @@ footer p {
     }
 }
 
+/* =========================
+   CELULAR
+========================= */
 
 @media (max-width: 600px) {
 
@@ -699,17 +786,51 @@ footer p {
     }
 
     .intro-text h2,
-    .section-heading h2,
     .gallery-title h2 {
         letter-spacing: -2px;
     }
 
-    .service-row h3 {
-        font-size: 20px;
+    /* SERVIÇOS MOBILE */
+
+    .services {
+        padding: 80px 6%;
     }
 
-    .service-row p {
-        font-size: 13px;
+    .services-intro {
+        margin-bottom: 50px;
+    }
+
+    .services-intro h2 {
+        font-size: 45px;
+        letter-spacing: -2px;
+    }
+
+    .services-intro p {
+        font-size: 15px;
+    }
+
+    .services-list {
+        grid-template-columns: 1fr;
+    }
+
+    .service-item,
+    .service-item:nth-child(odd),
+    .service-item:nth-child(even) {
+        min-height: auto;
+        padding: 28px 0;
+        border-right: none;
+    }
+
+    .service-number {
+        margin-bottom: 18px;
+    }
+
+    .service-item h3 {
+        font-size: 24px;
+    }
+
+    .service-item p {
+        font-size: 14px;
     }
 
     .photo-break-text {
@@ -723,7 +844,6 @@ footer p {
     }
 
     .gallery-grid {
-        display: grid;
         grid-template-columns: 1fr;
     }
 
@@ -765,6 +885,8 @@ footer p {
     }
 
     .floating-whatsapp {
+        width: 56px;
+        height: 56px;
         right: 15px;
         bottom: 15px;
     }
